@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+	<PreserveCompilationContext>false</PreserveCompilationContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Modules\Core\**" />
+    <Compile Remove="Modules\ModuleA\**" />
+    <Content Remove="Modules\Core\**" />
+    <Content Remove="Modules\ModuleA\**" />
+    <EmbeddedResource Remove="Modules\Core\**" />
+    <EmbeddedResource Remove="Modules\ModuleA\**" />
+    <None Remove="Modules\Core\**" />
+    <None Remove="Modules\ModuleA\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YooshinaCore\Yooshina.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\" />
+  </ItemGroup>
+
+</Project>
